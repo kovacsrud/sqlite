@@ -109,7 +109,7 @@ Először is, nem lesz annyira egyszerű :) Nem maga a lekérdezés kivitelezés
 
 Most is érdemes Dependency Injection-el átadni a Db osztálynak az ablakot, így könnyen elérhető majd a Grid, vagy valami más elem.
 
-Adjunk hozzá a projekthet egy új osztályt **Nem Item-Class**. A neve legyen **Db**
+Adjunk hozzá a projekthet egy új osztályt **New Item-Class**. A neve legyen **Db**
 
 A kiindulási állapot:
 
@@ -130,9 +130,7 @@ namespace TanulokDb
 	/// Description of Db.
 	/// </summary>
 	public class Db
-	{
-		Window1 window1;
-		
+	{	
 		public Db()
 		{
 						
@@ -141,8 +139,31 @@ namespace TanulokDb
 	}
 }
 ```
+Először gondoskodni kell az ablak átadásáról, a Db osztályban deklaráljuk ezt:
 
+```C#
+Window1 window1;
+		
+		public Db(Window1 window)
+		{
+			this.window1=window;
+			
+		}
+```
+Az ablak függvényébe pedig ez kell:
 
+```C#
+public partial class Window1 : Window
+	{
+		Db db;
+		public Window1()
+		{
+			InitializeComponent();
+			db=new Db(this);
+			db.DbLekerdez();
+		}
+	}
+```
 
 
 
