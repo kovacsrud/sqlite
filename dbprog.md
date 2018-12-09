@@ -59,6 +59,18 @@ Bejelölni a továbbiakat:
 
 - [x] Not NULL
 
+A többi szöveget tartalmazó mező beállítása ugyanaz.
+
+A **SzuletesEve** mező integer legyen.
+
+Ha megvan akkor **Commit structure changes**-gombra kattintva a tábla létrejön.
+
+![Commit](table_create_2.png)
+
+Megnézhetjük, hogy milyen SQL-utasítást készít a program:
+
+![SQL](table_create_2.png)
+
 
 
 
