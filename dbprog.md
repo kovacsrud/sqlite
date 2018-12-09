@@ -96,6 +96,11 @@ A keresőbe beírni: **Sqlite**, és a **System.Data.Sqlite(x86/x64)**-et válas
 
 ![sqliteinstall](sqlite_install.png)
 
+## A feladatok
+- [ ] Valamilyen felület kreálása, adatlekérdezés, és betöltés valamilyen Control-ba (célszerű egy DataGrid-et csinálni)
+- [ ] Adatfelvitel megvalósítása
+- [ ] Adat módosításának megvalósítása
+
 
 
 
