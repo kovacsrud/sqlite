@@ -142,13 +142,16 @@ namespace TanulokDb
 Először gondoskodni kell az ablak átadásáról, a Db osztályban deklaráljuk ezt:
 
 ```C#
-Window1 window1;
+public class Db
+	{
+		Window1 window1;
 		
 		public Db(Window1 window)
 		{
 			this.window1=window;
 			
 		}
+	}	
 ```
 Az ablak függvényébe pedig ez kell:
 
@@ -160,11 +163,25 @@ public partial class Window1 : Window
 		{
 			InitializeComponent();
 			db=new Db(this);
-			db.DbLekerdez();
+			
 		}
 	}
 ```
+Így már elérhető lesz az ablak.
 
+Hozzunk létre az XAML-ben egy DataGrid-et. Hagyjuk az automatikus oszlopgenerálást.
+
+```XAML
+<Window x:Class="TanulokDb.Window1"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="TanulokDb" Height="500" Width="300"
+	>
+	<Grid>
+		<DataGrid x:Name="adatok" AutoGenerateColumns="True" ColumnWidth="*" />
+	</Grid>
+</Window>
+```
 
 
 
