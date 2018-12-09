@@ -80,6 +80,10 @@ Az **Id**-t kivesszük, hiszen **Auto Increment**-et használunk. A többi érte
 
 ![Insert](table_create_4.png)
 
+Készüljön 4-5 rekord!
+
+
+
 
 
 
