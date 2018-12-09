@@ -123,7 +123,27 @@ using System.Windows.Controls;
 using System.Windows;
 using System.Diagnostics;
 using System.Data;
+
+namespace TanulokDb
+{
+	/// <summary>
+	/// Description of Db.
+	/// </summary>
+	public class Db
+	{
+		Window1 window1;
+		
+		public Db()
+		{
+						
+		}
+		
+	}
+}
 ```
+
+
+
 
 
 
