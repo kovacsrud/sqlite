@@ -47,6 +47,20 @@ A Primary Key mellett a **Configure** gombra kattintani, majd itt bejelölni
 
 ![Tábla létrehozás](table_create_1.png)
 
+A következő mező a **VezetekNev**
+
+Kattintani az **Add column** gombra
+
+**Column name**:VezetekNev
+
+**Data type**:varchar, **Size**:50
+
+Bejelölni a továbbiakat:
+
+- [x] Not NULL
+
+
+
 
 
 
