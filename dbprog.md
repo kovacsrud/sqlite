@@ -45,6 +45,8 @@ A Primary Key mellett a **Configure** gombra kattintani, majd itt bejelölni
 - [x] Autoincrement
 - [x] On Conflict :Abort
 
+![Tábla létrehozás](table_create_1.png)
+
 
 
 
