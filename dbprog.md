@@ -82,7 +82,19 @@ Az **Id**-t kivesszük, hiszen **Auto Increment**-et használunk. A többi érte
 
 Készüljön 4-5 rekord!
 
+# Az előbbi adatbázis kezelése C#-ból
 
+## Új solution: TanulokDb
+
+Készítsünk egy új Wpf solution-t.
+
+Ahhoz, hogy egy Sqlite adatbázist használni tudjunk a programból, pár dolgot telepíteni kell.
+
+A projekten/solution-on jobb gomb, majd **Manage Packages**
+
+A keresőbe beírni: **Sqlite**, és a **System.Data.Sqlite(x86/x64)**-et választani.
+
+![sqliteinstall](sqlite_install.png)
 
 
 
