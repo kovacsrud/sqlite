@@ -69,7 +69,18 @@ Ha megvan akkor **Commit structure changes**-gombra kattintva a tábla létrejö
 
 Megnézhetjük, hogy milyen SQL-utasítást készít a program:
 
-![SQL](table_create_2.png)
+![SQL](table_create_3.png)
+
+#### Rekordok felvitele
+
+A **Tanulok** táblán jobb gomb, majd **Generate query for table** **INSERT**
+
+Kapunk egy nyers INSERT Sql utasítást, csak kicsit át kell írni.
+Az **Id**-t kivesszük, hiszen **Auto Increment**-et használunk. A többi értelemszerű.
+
+![Insert](table_create_4.png)
+
+
 
 
 
