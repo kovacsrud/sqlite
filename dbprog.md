@@ -37,9 +37,15 @@ Kattintani az **Add column** gombra
 
 Bejelölni a továbbiakat:
 
-[x] Primary Key
+- [x] Primary Key
+- [x] Not NULL
 
-[x] Not NULL
+A Primary Key mellett a **Configure** gombra kattintani, majd itt bejelölni
+
+- [x] Autoincrement
+- [x] On Conflict :Abort
+
+
 
 
 
