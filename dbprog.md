@@ -14,4 +14,5 @@ Egyszerű egy táblából álló adatbázist készítünk.
 **Database->Add a database**
 **Database Type**:Sqlite3
 **File**: A zöld **+**-on kell kattintani mappát választani, adabázis fájl nevét megadni.
+![Minta 1](sqlite_demo_2.png)
 
