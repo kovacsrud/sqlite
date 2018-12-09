@@ -16,3 +16,14 @@ Egyszerű egy táblából álló adatbázist készítünk.
 **File**: A zöld **+**-on kell kattintani mappát választani, adabázis fájl nevét megadni.
 ![Minta 1](sqlite_demo_2.png)
 
+#### Adattábla létrehozása
+Az adattábla a következő oszlopokból fog állni:
++ Id ( A tanuló tábla elsődleges kulcsa)
++ VezetekNev
++ KeresztNev
++ AnyjaNeve
++ SzuletesEve
++ SzuletesiHely
+
+
+
