@@ -26,13 +26,22 @@ Az adattábla a következő oszlopokból fog állni:
 + SzuletesiHely
 
 A **Tables**-on jobb gomb, majd **Create table**
+
 **Table name**: tanulok
+
 Kattintani az **Add column** gombra
+
 **Column name**:Id
+
 **Data type**:integer
+
 Bejelölni a továbbiakat:
+
 [x] Primary Key
+
 [x] Not NULL
+
+
 
 
 
