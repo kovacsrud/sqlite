@@ -101,6 +101,30 @@ A keresőbe beírni: **Sqlite**, és a **System.Data.Sqlite(x86/x64)**-et válas
 - [ ] Adatfelvitel megvalósítása
 - [ ] Adat módosításának megvalósítása
 
+### Egyszerű select lekérdezés kódolása
+
+Először is, nem lesz annyira egyszerű :) Nem maga a lekérdezés kivitelezése probléma, hanem az ad munkát, hogy a lekérdezés eredményét átömlesszük valami olyan adatszerkezetbe, amelyet a DataGrid meg tud jeleníteni.
+
+#### Először készítünk egy Db nevű osztályt, nem kódolunk bele az ablakba.
+
+Most is érdemes Dependency Injection-el átadni a Db osztálynak az ablakot, így könnyen elérhető majd a Grid, vagy valami más elem.
+
+Adjunk hozzá a projekthet egy új osztályt **Nem Item-Class**. A neve legyen **Db**
+
+A kiindulási állapot:
+
+```C#
+using System;
+using System.Data.SQLite;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Media;
+using System.Windows.Controls;
+using System.Windows;
+using System.Diagnostics;
+using System.Data;
+```
+
 
 
 
