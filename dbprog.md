@@ -206,6 +206,43 @@ Ezt követően adjuk meg az elvégzendő műveletet:
 ```
 A lekérdezett adatok az _**eredm**_ nevű eredményhalmazba kerülnek, ez a megjelenítéshez további feldolgozást igényel.
 
+Az adatokból adattáblát készítünk, ez egyszerűbb, mintha osztályt készítenénk az adatokhoz, és azt példányosítgatnánk.
+
+```C#
+DataTable tanulok=new DataTable();
+			
+	tanulok.Columns.Add("Vezetéknév");
+	tanulok.Columns.Add("Keresztnév");
+	tanulok.Columns.Add("Anyja neve");
+	tanulok.Columns.Add("Születési idő");
+	tanulok.Columns.Add("Születési hely");
+			
+```
+Ezt követően egy ciklussal végig kell olvasni az eredményhalmazt. A cikluson belül egy DataRow osztályú adatsort hozunk létre, ezt adjuk hozzá a DataTable-hoz.
+
+```C#
+while (eredm.Read()) {
+	DataRow ujsor=tanulok.NewRow();
+			
+	ujsor["Vezetéknév"]=eredm["VezetekNev"];
+	ujsor["Keresztnév"]=eredm["KeresztNev"];
+	ujsor["Anyja neve"]=eredm["AnyjaNeve"];
+	ujsor["Születési idő"]=eredm["SzuletesEve"];
+	ujsor["Születési hely"]=eredm["SzuletesiHely"];
+			
+	tanulok.Rows.Add(ujsor);
+								
+				
+}
+```
+A kész DataTable-t már tudja fogadni a DataGrid, majd zárjuk az adatbázis kapcsolatot.
+
+```C#
+	window1.adatok.ItemsSource=tanulok.DefaultView;
+		
+	db_connect.Close();
+```
+
 
 
 
