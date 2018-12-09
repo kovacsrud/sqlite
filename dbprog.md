@@ -9,5 +9,9 @@ Egyszerű egy táblából álló adatbázist készítünk.
 - [ ] Adattábla létrehozása
 - [ ] Néhány rekord felvitele, hogy legyen mit lekérdezni
 ---
+#### Az új adatbázis létrehozása
 
+**Database->Add a database**
+**Database Type**:Sqlite3
+**File**: A zöld **+**-on kell kattintani mappát választani, adabázis fájl nevét megadni.
 
