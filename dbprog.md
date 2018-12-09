@@ -182,6 +182,29 @@ Hozzunk létre az XAML-ben egy DataGrid-et. Hagyjuk az automatikus oszlopgenerá
 	</Grid>
 </Window>
 ```
+Az adatok lekérdezéséhez h Db osztályunkba létre kell hozni egy új metódust, DbLekerdez() néven. 
+Minden ami a lekérdezéshez kell ebbe kerül.
+
+```C#
+public void DbLekerdez()
+	{
+		
+	}
+```
+Az első lépés az adatbázishoz való kapcsolódás deklarálása:
+
+```C#
+SQLiteConnection db_connect=new SQLiteConnection("Data Source=g:\\adatok\\szoftver_tanf_peldak\\tanulo_nyilvantartas\\tanulo_v1.db;Version=3;");
+	db_connect.Open();
+```
+Ezt követően adjuk meg az elvégzendő műveletet:
+
+```C#
+	string sql="select * from Tanulok";
+	SQLiteCommand comm=new SQLiteCommand(sql,db_connect);
+	var eredm=comm.ExecuteReader();
+```
+A lekérdezett adatok az _**eredm**_ nevű eredményhalmazba kerülnek, ez a megjelenítéshez további feldolgozást igényel.
 
 
 
