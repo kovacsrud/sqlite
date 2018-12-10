@@ -325,7 +325,33 @@ db_connect.Close();
 ```
 Ezzel ez a metódus elkészült, de a meghívásáról gondoskodni kell.
 
+A gomb már megvan ugyan, de közvetlenül nem férünk hozzá. Először meg kell írni az eseménykezelő függvényt.
 
+```C#
+public void DbUjAdatRogzit(object sender, RoutedEventArgs e)
+	{
+		
+	}
+```
+Ebből a függvényből hívjuk meg az adatokat rögzítő metódust a megfelelő paraméterekkel:
+
+```C#
+public void DbUjAdatRogzit(object sender, RoutedEventArgs e)
+		{
+							 DbUjadat(window1.vezeteknev.Text,window1.keresztnev.Text,window1.anyjaneve.Text,Convert.ToInt32(window1.szuleteseve.Text),window1.szuletesihely.Text);
+	
+		}
+```
+Megvan az eseménykezelő, de ezt a függvényt még fel kell "iratkoztatni" a gomb **Click** eseményére, ezt a Db osztály konstruktorában kell(célszerű) megtenni.
+
+```C#
+public Db(Window1 window)
+	{
+	this.window1=window;
+	window1.ButtonUjAdat.Click+=DbUjAdatRogzit;	
+	}
+```
+Ezek után már mennie kell az új rekord felvételének, de tennivaló akad még (pl. hibakezelések).
 
 
 
