@@ -294,11 +294,36 @@ public void DbUjadat(string vezeteknev,string keresztnev,string anyjaneve,int sz
 		//Ide jönnek a parancsok
 	}
 ```
+Kapcsolódás az adatbázishoz:
+```C#
+//Az adatbázis elérését nyilván az adott környezethez kell igazítani
+SQLiteConnection db_connect=new SQLiteConnection("Data Source=d:\\adatok\\c#\\tanulo_v1.db;Version=3;");
+db_connect.Open();
+```
+Megépítjük az SQL parancsot (A sortörés csak a jobb olvashatóság miatt kell) 
+```C#
+comm.CommandText="insert into Tanulok" +
+ "(VezetekNev,KeresztNev,AnyjaNeve,SzuletesEve,SzuletesiHely)" +
+ "values(@vezeteknev,@keresztnev,@anyjaneve,@szuleteseve,@szuletesihely)";
+```
+Felmerül a kérdés, hogy mik azok a @keresznev ... stb? Ezek az SQL parancs **paraméterei**. Lehet úgy is sql parancsot építeni, hogy stringeket fűzünk össze, csak tilos :) Nem, nem tilos, csak sebezhetőséget visz a programba (SQL injection), mert ha valaki ezt a string-et kívülről manipulálni tudja esetleg, akkor mi van ha beletesz egy **DELETE** parancsot? A paraméterek használatával ez elkerülhető.
 
+Hozzáadjuk a paramétereket:
 
+```C#
+comm.Parameters.Add("@vezeteknev",DbType.String).Value=vezeteknev;
+comm.Parameters.Add("@keresztnev",DbType.String).Value=keresztnev;
+comm.Parameters.Add("@anyjaneve",DbType.String).Value=anyjaneve;
+comm.Parameters.Add("@szuleteseve",DbType.Int32).Value=szuleteseve;
+comm.Parameters.Add("@szuletesihely",DbType.String).Value=szuletesihely;
+```
+Majd a végrehajtás és a kapcsolat zárása:
 
-
-
+```C#
+comm.ExecuteNonQuery();		
+db_connect.Close();
+```
+Ezzel ez a metódus elkészült, de a meghívásáról gondoskodni kell.
 
 
 
