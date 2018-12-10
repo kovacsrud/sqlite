@@ -266,6 +266,15 @@ Módosítsuk az XAML-t
 
 Ezzel a lekérdezésünk egy külön lapra került. További **TabItem**-ek használatával további lapokat adhatunk a felülethez.
 
+A **Lekérdezés** fül **</TabItem>** eleme után jön a következő, ez lesz az adatfelvitelé.
+
+```XAML
+<TabItem Header="Új tanuló felvitel">
+<Grid>
+</Grid>
+</TabItem>
+```
+Az adatfelvitelhez szükség lesz **Label** illetve **TextBox** elemekre. Mindezt valamibe bele kellene rendezni, erre egy **StackPanel** megfelelő lesz.
 
 
 
