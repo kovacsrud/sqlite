@@ -276,7 +276,7 @@ A **Lekérdezés** fül **</TabItem>** eleme után jön a következő, ez lesz a
 ```
 Az adatfelvitelhez szükség lesz **Label** illetve **TextBox** elemekre. Mindezt valamibe bele kellene rendezni, erre egy **StackPanel** megfelelő lesz.
 
-A **<Grid>**-en belülre:
+A **Grid**-en belülre:
 
 ```XAML
 <StackPanel HorizontalAlignment="Left">
@@ -286,7 +286,14 @@ A **<Grid>**-en belülre:
 	<Button Content="Felvesz" x:Name="ButtonUjAdat" />
 </StackPanel>	
 ```
-	
+A Db osztályban folytatjuk, készítünk egy új metódust, mondjuk **DbUjAdat** néven. Azt tervezzük,hogy paraméterként átadjuk a metódusnak azokat az adatokat, amelyeket aztán az **INSERT INTO** parancs majd felvisz mint új rekordot.
+
+```C#
+public void DbUjadat(string vezeteknev,string keresztnev,string anyjaneve,int szuleteseve,string szuletesihely)
+	{
+		//Ide jönnek a parancsok
+	}
+```
 
 
 
