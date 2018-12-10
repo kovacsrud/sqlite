@@ -242,7 +242,29 @@ A kész DataTable-t már tudja fogadni a DataGrid, majd zárjuk az adatbázis ka
 		
 	db_connect.Close();
 ```
+### Adatfelvitel megvalósítása (INSERT INTO)
 
+Az adatfelvitel megvalósításához módosítani kell a program felületét, hiszen a gridünk erre most nem használható. Szerencsére az XAML lehetőséget ad arra, hogy könnyen módosítsuk a felületet. Valami olyan kellene, amelynek segítségével több egymástól független lapot is meg lehet jeleníteni. Erre tökéletesen jó lesz a **TabControl**. Ezzel tetszőleges számú lap készíthető, és a megfelelőre tudjuk helyezni az összetartozó funkciókat, elemeket.
+
+Módosítsuk az XAML-t
+
+```XAML
+<Window x:Class="TanulokDb.Window1"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="TanulokDb" Height="500" Width="300"
+	>
+	<TabControl>
+	<TabItem Header="Lekérdezés">
+	<Grid>
+		<DataGrid x:Name="adatok" AutoGenerateColumns="True" ColumnWidth="*" />
+	</Grid>
+	</TabItem>
+	</TabControl>
+</Window>
+```
+
+Ezzel a lekérdezésünk egy külön lapra került. További **TabItem**-ek használatával további lapokat adhatunk a felülethez.
 
 
 
