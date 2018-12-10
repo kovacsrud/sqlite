@@ -337,10 +337,8 @@ Ebből a függvényből hívjuk meg az adatokat rögzítő metódust a megfelel�
 
 ```C#
 public void DbUjAdatRogzit(object sender, RoutedEventArgs e)
-		{
-							 DbUjadat(window1.vezeteknev.Text,window1.keresztnev.Text,window1.anyjaneve.Text,Convert.ToInt32(window1.szuleteseve.Text),window1.szuletesihely.Text);
-	
-		}
+{	DbUjadat(window1.vezeteknev.Text,window1.keresztnev.Text,window1.anyjaneve.Text,Convert.ToInt32(window1.szuleteseve.Text),window1.szuletesihely.Text);
+}
 ```
 Megvan az eseménykezelő, de ezt a függvényt még fel kell "iratkoztatni" a gomb **Click** eseményére, ezt a Db osztály konstruktorában kell(célszerű) megtenni.
 
