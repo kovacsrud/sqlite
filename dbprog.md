@@ -276,6 +276,18 @@ A **Lekérdezés** fül **</TabItem>** eleme után jön a következő, ez lesz a
 ```
 Az adatfelvitelhez szükség lesz **Label** illetve **TextBox** elemekre. Mindezt valamibe bele kellene rendezni, erre egy **StackPanel** megfelelő lesz.
 
+A **<Grid>**-en belülre:
+
+```XAML
+<StackPanel HorizontalAlignment="Left">
+	<Label Content="Vezetéknév"/>
+	<TextBox x:Name="vezeteknev" MinWidth="200" MaxWidth="200" MaxLength="50"/>
+	...
+	<Button Content="Felvesz" x:Name="ButtonUjAdat" />
+</StackPanel>	
+```
+	
+
 
 
 
