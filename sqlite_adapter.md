@@ -119,12 +119,6 @@ Adapter adapter;
 	
 public Window1()
 {
-	InitializeComponent();
-	SQLiteConnection db_connect=new SQLiteConnection("Data Source=d:\\csharp_proj\\tanulo_v1.db;Version=3;");
-	adapter=new Adapter(db_connect);
-	
-	adatok.ItemsSource=adapter.GetTableData().DefaultView;
-	adatok.RowEditEnding+=ColorTheRow;
 			
 			
 }
@@ -158,5 +152,25 @@ public Window1()
 	adatok.RowEditEnding+=ColorTheRow;
 			
 			
+}
+```
+Kell egy metódus, amely a gomb lenyomásakor meghívja az **UpdateData()** metódust.
+
+```csharp
+void ButtonUpdate_Click(object sender, RoutedEventArgs e)
+{
+		
+	adapter.UpdateData();
+	//Próbáljuk a DataGrid színét visszaállítani
+	adatok.Background=Brushes.White;
+			
+}
+```
+Célszerű lehet jelölni, hogy mely sorok voltak változtatva
+
+```csharp
+public void ColorTheRow(object sender, DataGridRowEditEndingEventArgs e)
+{
+	e.Row.Background=Brushes.Aqua;
 }
 ```
