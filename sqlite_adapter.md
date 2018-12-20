@@ -109,4 +109,54 @@ public void UpdateData()
 		
 }
 ```
+A főprogram kódja a következőképpen alakul:
 
+```csharp
+public partial class Window1 : Window
+{
+//Az eseményvezérlők miatt itt deklarálni kell az adaptert
+Adapter adapter;
+	
+public Window1()
+{
+	InitializeComponent();
+	SQLiteConnection db_connect=new SQLiteConnection("Data Source=d:\\csharp_proj\\tanulo_v1.db;Version=3;");
+	adapter=new Adapter(db_connect);
+	
+	adatok.ItemsSource=adapter.GetTableData().DefaultView;
+	adatok.RowEditEnding+=ColorTheRow;
+			
+			
+}
+
+void ButtonUpdate_Click(object sender, RoutedEventArgs e)
+{
+			
+	adapter.UpdateData();
+	adatok.Background=Brushes.White;
+			
+}
+		
+public void ColorTheRow(object sender, DataGridRowEditEndingEventArgs e)
+{
+	//Színezzük a szerkesztett rekordokat
+	e.Row.Background=Brushes.Aqua;
+}
+													
+}
+```
+A konstruktor kódja
+
+```csharp
+public Window1()
+{
+	InitializeComponent();
+	SQLiteConnection db_connect=new SQLiteConnection("Data Source=d:\\csharp_proj\\tanulo_v1.db;Version=3;");
+	adapter=new Adapter(db_connect);
+		
+	adatok.ItemsSource=adapter.GetTableData().DefaultView;
+	adatok.RowEditEnding+=ColorTheRow;
+			
+			
+}
+```
