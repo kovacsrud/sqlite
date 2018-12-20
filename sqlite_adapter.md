@@ -47,10 +47,26 @@ public Adapter(SQLiteConnection conn)
 
 }
 ```
-A legalapvetőbb viselkedés az adatok lekérdezése
+A legalapvetőbb viselkedés az adatok lekérdezése, A **SelectCommand** tárolja az adatok lekérdezését megvalósító parancsot.
 
 ```csharp
 myAdapter=new SQLiteDataAdapter("select * from tanulok",conn);
 myAdapter.SelectCommand=new SQLiteCommand(conn);
 myAdapter.SelectCommand.CommandText="select * from tanulok";
 ```
+A következő az adatfelvitel megadása
+
+```csharp
+myAdapter.InsertCommand=new SQLiteCommand(conn);
+myAdapter.InsertCommand.CommandText="insert into tanulok" +
+"(VezetekNev,KeresztNev,AnyjaNeve,SzuletesEve,SzuletesiHely)"+
+"values(@vezeteknev,@keresztnev,@anyjaneve,@szuletesiido,@szuletesihely)";
+			
+myAdapter.InsertCommand.Parameters.Add("@vezeteknev",DbType.String,50,"VezetekNev");
+myAdapter.InsertCommand.Parameters.Add("@keresztnev",DbType.String,50,"KeresztNev");
+myAdapter.InsertCommand.Parameters.Add("@anyjaneve",DbType.String,50,"AnyjaNeve");
+myAdapter.InsertCommand.Parameters.Add("@szuletesiido",DbType.Int32,0,"SzuletesEve");
+myAdapter.InsertCommand.Parameters.Add("@szuletesihely",DbType.String,50,"SzuletesiHely");
+```
+A paraméterek neve bármi lehet, viszont itt a típus megadása után nem változónevek állnak, hanem az adattábla oszlopnevei.
+
