@@ -37,4 +37,20 @@ public class Adapter
 }	
 ```
 
+### Konstruktor
 
+A konstruktorba kerülnek a megfelelő működést megvalósító SQL parancsok, a megfelelő paraméterekkel.
+
+```csharp
+public Adapter(SQLiteConnection conn)
+{
+
+}
+```
+A legalapvetőbb viselkedés az adatok lekérdezése
+
+```csharp
+myAdapter=new SQLiteDataAdapter("select * from tanulok",conn);
+myAdapter.SelectCommand=new SQLiteCommand(conn);
+myAdapter.SelectCommand.CommandText="select * from tanulok";
+```
