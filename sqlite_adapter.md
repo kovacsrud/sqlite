@@ -55,7 +55,7 @@ myAdapter=new SQLiteDataAdapter("select * from tanulok",conn);
 myAdapter.SelectCommand=new SQLiteCommand(conn);
 myAdapter.SelectCommand.CommandText="select * from tanulok";
 ```
-A következő az adatfelvitel megadása
+**A következő az adatfelvitel megadása**
 
 ```csharp
 myAdapter.InsertCommand=new SQLiteCommand(conn);
@@ -71,7 +71,7 @@ myAdapter.InsertCommand.Parameters.Add("@szuletesihely",DbType.String,50,"Szulet
 ```
 A paraméterek neve bármi lehet, viszont itt a típus megadása után nem változónevek állnak, hanem az adattábla oszlopnevei.
 
-Az adatmódosítás megvalósítása
+**Az adatmódosítás megvalósítása**
 
 ```csharp
 myAdapter.UpdateCommand=new SQLiteCommand(conn);
@@ -87,6 +87,16 @@ myAdapter.UpdateCommand.Parameters.Add("@szuletesiido",DbType.Int32,0,"SzuletesE
 myAdapter.UpdateCommand.Parameters.Add("@szuletesihely",DbType.String,50,"SzuletesiHely");
 myAdapter.UpdateCommand.Parameters.Add("@oldId",DbType.Int32,0,"Id").SourceVersion=DataRowVersion.Original;
 ```
+**A törlés megvalósítása**
+
+```csharp
+myAdapter.DeleteCommand=new SQLiteCommand(conn);
+myAdapter.DeleteCommand.CommandText="delete from tanulok where Id=@oldId";
+myAdapter.DeleteCommand.Parameters.Add("@id",DbType.Int32,50,"Id");
+myAdapter.DeleteCommand.Parameters.Add("@oldId",DbType.Int32,0,"Id").SourceVersion=DataRowVersion.Original;
+```
+
+
 ### Adatlekérdező metódus
 
 Eléggé egyszerű
