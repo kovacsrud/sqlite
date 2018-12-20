@@ -133,7 +133,9 @@ public Window1()
 	adapter=new Adapter(db_connect);
 		
 	adatok.ItemsSource=adapter.GetTableData().DefaultView;
-	adatok.RowEditEnding+=ColorTheRow;
+	
+	//Ennél az eseménynél átszínezzük a szerkesztett sort.
+	adatok.RowEditEnding+=ColorTheRow; 
 			
 			
 }
