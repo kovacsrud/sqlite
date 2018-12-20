@@ -157,8 +157,10 @@ void ButtonUpdate_Click(object sender, RoutedEventArgs e)
 {
 		
 	adapter.UpdateData();
-	//Próbáljuk a DataGrid színét visszaállítani
+	//Visszaállítjuk a sorok színét
 	adatok.Background=Brushes.White;
+	//Frissítjük a DataGridet
+	adatok.Items.Refresh();
 			
 }
 ```
