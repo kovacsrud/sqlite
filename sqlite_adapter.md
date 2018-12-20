@@ -122,22 +122,6 @@ public Window1()
 			
 			
 }
-
-void ButtonUpdate_Click(object sender, RoutedEventArgs e)
-{
-			
-	adapter.UpdateData();
-	adatok.Background=Brushes.White;
-			
-}
-		
-public void ColorTheRow(object sender, DataGridRowEditEndingEventArgs e)
-{
-	//Színezzük a szerkesztett rekordokat
-	e.Row.Background=Brushes.Aqua;
-}
-													
-}
 ```
 A konstruktor kódja
 
