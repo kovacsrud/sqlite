@@ -26,6 +26,7 @@ A felület most is egy DataGrid lesz, amely automatikusan jeleníti meg az **Ite
 
 Az adapter osztály arra van, hogy benne egy helyen tudjuk kezelni az összes felmerülő feladatot. Ezeket a **CRUD** jelöléssel is 
 szokták illetni (**C**reate,**R**ead,**U**pdate,**D**elete). Használatával a DataGrid segítségével meg tudjuk ezeket csinálni, nem kell külön felület az adatfelvitelhez, módosításhoz. Az adapterben meg tudjuk adni a megfelelő SQL parancsokat.
+Az adatok egy DataTable-be kerülnek, ezt kapja majd a DataGrid.
 
 ```csharp
 
@@ -86,3 +87,26 @@ myAdapter.UpdateCommand.Parameters.Add("@szuletesiido",DbType.Int32,0,"SzuletesE
 myAdapter.UpdateCommand.Parameters.Add("@szuletesihely",DbType.String,50,"SzuletesiHely");
 myAdapter.UpdateCommand.Parameters.Add("@oldId",DbType.Int32,0,"Id").SourceVersion=DataRowVersion.Original;
 ```
+### Adatlekérdező metódus
+
+Eléggé egyszerű
+
+```csharp
+public DataTable GetTableData()
+{		
+	myAdapter.Fill(table);
+	return table;
+}
+```
+### Update metódus
+
+Ez pedig elvégzi a módosításokat, a DataGrid-ben elvégzett változtatások az adatbázisba is beíródnak.
+
+```csharp
+public void UpdateData()
+{
+	myAdapter.Update(table);
+		
+}
+```
+
