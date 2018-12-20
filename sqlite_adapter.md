@@ -70,3 +70,19 @@ myAdapter.InsertCommand.Parameters.Add("@szuletesihely",DbType.String,50,"Szulet
 ```
 A paraméterek neve bármi lehet, viszont itt a típus megadása után nem változónevek állnak, hanem az adattábla oszlopnevei.
 
+Az adatmódosítás megvalósítása
+
+```csharp
+myAdapter.UpdateCommand=new SQLiteCommand(conn);
+myAdapter.UpdateCommand.CommandText="update tanulok set " +
+"VezetekNev=@vezeteknev, KeresztNev=@keresztnev, AnyjaNeve=@anyjaneve, SzuletesEve=@szuletesiido,SzuletesiHely=@szuletesihely "+
+ "where Id=@oldId";
+			
+myAdapter.UpdateCommand.Parameters.Add("@id",DbType.Int32,50,"Id");
+myAdapter.UpdateCommand.Parameters.Add("@vezeteknev",DbType.String,50,"VezetekNev");
+myAdapter.UpdateCommand.Parameters.Add("@keresztnev",DbType.String,50,"KeresztNev");
+myAdapter.UpdateCommand.Parameters.Add("@anyjaneve",DbType.String,50,"AnyjaNeve");
+myAdapter.UpdateCommand.Parameters.Add("@szuletesiido",DbType.Int32,0,"SzuletesEve");
+myAdapter.UpdateCommand.Parameters.Add("@szuletesihely",DbType.String,50,"SzuletesiHely");
+myAdapter.UpdateCommand.Parameters.Add("@oldId",DbType.Int32,0,"Id").SourceVersion=DataRowVersion.Original;
+```
